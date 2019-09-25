@@ -2,7 +2,7 @@ package Net::MQTT::Simple::Auth;
 
 use parent 'Net::MQTT::Simple';
 
-our $VERSION = '0.001';
+our $VERSION = '0.003';
 
 sub new {
 	my ($class, $server, $user, $password, $sockopts) = @_;
@@ -22,7 +22,7 @@ sub _send_connect {
 	$self->_send("\x10" . Net::MQTT::Simple::_prepend_variable_length( pack (
 		"x C/a* C C n n/a* n/a* n/a*",
 		$Net::MQTT::Simple::PROTOCOL_NAME,
-		0x03,
+		$Net::MQTT::Simple::PROTOCOL_LEVEL,
 		0xC2,
 		$Net::MQTT::Simple::KEEPALIVE_INTERVAL,
 		$self->_client_identifier,
