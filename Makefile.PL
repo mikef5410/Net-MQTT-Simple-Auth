@@ -18,7 +18,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Net::MQTT::Simple" => "1.21"
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }
